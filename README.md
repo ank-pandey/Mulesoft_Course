@@ -1,1 +1,1 @@
-# Mulesoft course fundamentals
+# Mulesoft Course Fundamentals
