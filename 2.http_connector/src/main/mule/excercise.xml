@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="excerciseFlow" doc:id="e45165ad-6326-440c-b141-5e2ae4f42591" >
+		<http:listener doc:name="Listener" doc:id="26fb8e39-04a7-4ae7-920c-881e4a505162" config-ref="HTTP_Listener_config" path="/excercise/{id}" allowedMethods="GET"/>
+		<set-payload value='#[%dw 2.0output application/json---{	"uriParams": attributes.uriParams,	"queryParams": attributes.queryParams}]' doc:name="Set Payload" doc:id="9e427506-cd13-4a71-a511-2e8c35a51ee8" />
+	</flow>
+</mule>
